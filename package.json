@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --watchAll --verbose",
+    "e2e": "cypress open"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.1",
@@ -18,5 +20,10 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "cypress": "^9.2.1",
+    "jest": "^27.4.7"
   }
 }

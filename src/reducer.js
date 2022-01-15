@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 
-import counter from './reducers/counter';
-import timer from './reducers/timer';
+import cart from './reducers/cart';
 
-export default combineReducers({ counter, timer });
+export default combineReducers({ cart });
