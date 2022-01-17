@@ -4,7 +4,7 @@ const initState = { items: [] };
 
 // item id, name of the item, description, price, image, quantity
 
-// COUNTER REDUCER
+// CART REDUCER
 export default (state = initState, action) => {
   switch (action.type) {
     case ADDTOCART:
@@ -27,9 +27,24 @@ export default (state = initState, action) => {
         return { items: itemList };
       }
     case REMOVEFROMCART:
-      return state - 1;
+      let itemToDelete = action.payload.item;
+      let isItemQuantityRemovedAlready = false;
+
+      let itemList = state.items;
+      for (let item of itemList) {
+        if (item.id === itemToDelete) {
+          item.quantity =
+            item.quantity >= itemToDelete.quantity
+              ? item.quantity - itemToDelete.quantity
+              : 0;
+          isItemQuantityRemovedAlready = true;
+          break;
+        }
+      }
+
+      return { items: itemList };
     case RESETCART:
-      return 0;
+      return { items: [] };
     default:
       return state;
   }
