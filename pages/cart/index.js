@@ -11,7 +11,6 @@ const Cart = () => {
       <Link href='/item-list'>
         <a>Go to items</a>
       </Link>
-      <li></li>
     </div>
   );
 };

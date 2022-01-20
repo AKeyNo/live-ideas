@@ -13,7 +13,7 @@ export const ShoppingCart = () => {
       <ul>
         {cart.items.map((item) => {
           return (
-            <li>
+            <li key={item.id}>
               {item.name}, {item.description}, {item.price}: Quantity:
               {item.quantity}
             </li>
