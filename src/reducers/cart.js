@@ -11,8 +11,8 @@ export default (state = initState, action) => {
       let addedItem = action.payload.item;
       let isItemInCartAlready = false;
 
-      let itemList = state.items;
-      for (let item of itemList) {
+      let ATC_itemList = state.items;
+      for (let item of ATC_itemList) {
         if (item.id === addedItem.id) {
           item.quantity += 1;
           isItemInCartAlready = true;
@@ -21,17 +21,17 @@ export default (state = initState, action) => {
       }
 
       if (isItemInCartAlready) {
-        return { items: itemList };
+        return { items: ATC_itemList };
       } else {
-        itemList.push(addedItem);
-        return { items: itemList };
+        ATC_itemList.push(addedItem);
+        return { items: ATC_itemList };
       }
     case REMOVEFROMCART:
       let itemToDelete = action.payload.item;
       let isItemQuantityRemovedAlready = false;
 
-      let itemList = state.items;
-      for (let item of itemList) {
+      let RFC_itemList = state.items;
+      for (let item of RFC_itemList) {
         if (item.id === itemToDelete) {
           item.quantity =
             item.quantity >= itemToDelete.quantity
@@ -42,7 +42,7 @@ export default (state = initState, action) => {
         }
       }
 
-      return { items: itemList };
+      return { items: RFC_itemList };
     case RESETCART:
       return { items: [] };
     default:

@@ -6,7 +6,7 @@ export const ShoppingCart = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div data-cy='cart'>
       <h1>
         <u>Shopping Cart</u>
       </h1>

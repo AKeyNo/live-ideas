@@ -33,7 +33,7 @@ export const ItemList = () => {
   ];
 
   return (
-    <div>
+    <div className={'item-list'} data-cy='item-list'>
       <h1>
         <u>Items to Buy</u>
       </h1>

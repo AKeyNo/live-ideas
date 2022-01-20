@@ -6,12 +6,13 @@ const Cart = () => {
   const state = useSelector((state) => state);
 
   return (
-    <>
+    <div className={'cart'}>
       <ShoppingCart />
-      <Link href='/itemList'>
+      <Link href='/item-list'>
         <a>Go to items</a>
       </Link>
-    </>
+      <li></li>
+    </div>
   );
 };
 
