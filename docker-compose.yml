@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  live-ideas:
+    container_name: live-ideas
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+      - '/node_modules'
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  live-ideas-db:
+    container_name: live-ideas-db
+    image: postgres:10
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: live-ideas
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      # copy the sql script to create tables
+      - ./src/sql/init.sql:/docker-entrypoint-initdb.d/init.sql

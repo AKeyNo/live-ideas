@@ -8,7 +8,7 @@ Make sure that you have installed [Git](https://git-scm.com/) and [Docker](https
 
 ## Installation
 
-In your favorite shell, type the following in order once Docker has been configured in the repository.
+In your favorite shell, type the following in order.
 
 ```
 git clone https://github.com/AKeyNo/live-ideas.git

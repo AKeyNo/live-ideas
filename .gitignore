@@ -37,3 +37,6 @@ yarn-error.log*
 /cypress/downloads
 /cypress/screenshots
 /cypress/videos
+
+# postgres
+/postgres-data
