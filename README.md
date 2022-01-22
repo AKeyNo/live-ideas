@@ -8,6 +8,7 @@ Make sure that you have installed [Git](https://git-scm.com/) and [Docker](https
 
 ## Installation
 
+Rename the ".env.local.example" file name to ".env.local".
 In your favorite shell, type the following in order.
 
 ```
