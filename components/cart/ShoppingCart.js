@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { addToShoppingCart } from '../../src/utils/actions';
+import { removeFromShoppingCart } from '../../src/utils/actions';
 
 export const ShoppingCart = () => {
   const cart = useSelector((state) => state.cart);
@@ -16,6 +16,9 @@ export const ShoppingCart = () => {
             <li key={item.id}>
               {item.name}, {item.description}, {item.price}: Quantity:
               {item.quantity}
+              <button onClick={() => dispatch(removeFromShoppingCart(item))}>
+                |Remove Item From Cart
+              </button>
             </li>
           );
         })}

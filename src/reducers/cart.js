@@ -7,6 +7,7 @@ const initState = { items: [] };
 // CART REDUCER
 export default (state = initState, action) => {
   switch (action.type) {
+    // ADD ITEM TO CART
     case ADDTOCART:
       let addedItem = action.payload.item;
       let isItemInCartAlready = false;
@@ -28,19 +29,9 @@ export default (state = initState, action) => {
       }
     case REMOVEFROMCART:
       let itemToDelete = action.payload.item;
-      let isItemQuantityRemovedAlready = false;
-
       let RFC_itemList = state.items;
-      for (let item of RFC_itemList) {
-        if (item.id === itemToDelete) {
-          item.quantity =
-            item.quantity >= itemToDelete.quantity
-              ? item.quantity - itemToDelete.quantity
-              : 0;
-          isItemQuantityRemovedAlready = true;
-          break;
-        }
-      }
+
+      RFC_itemList = RFC_itemList.filter((item) => item.id !== itemToDelete.id);
 
       return { items: RFC_itemList };
     case RESETCART:

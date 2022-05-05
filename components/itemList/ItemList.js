@@ -43,7 +43,7 @@ export const ItemList = () => {
             <li key={item.id}>
               {item.name}, {item.description}, {item.price}
               <button onClick={() => dispatch(addToShoppingCart(item))}>
-                Add Item
+                |Add Item To Cart
               </button>
             </li>
           );
