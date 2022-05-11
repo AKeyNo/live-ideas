@@ -41,9 +41,11 @@ export const ItemList = () => {
         {LISTOFITEMS.map((item) => {
           return (
             <li key={item.id}>
-              {item.name}, {item.description}, {item.price}
+              <span>
+                {item.name} {item.price}
+              </span>
               <button onClick={() => dispatch(addToShoppingCart(item))}>
-                |Add Item To Cart
+                Add Item To Cart
               </button>
             </li>
           );

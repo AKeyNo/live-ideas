@@ -14,10 +14,12 @@ export const ShoppingCart = () => {
         {cart.items.map((item) => {
           return (
             <li key={item.id}>
-              {item.name}, {item.description}, {item.price}: Quantity:
+              {item.name}, {item.price}
+              <br />
+              Quantity:
               {item.quantity}
               <button onClick={() => dispatch(removeFromShoppingCart(item))}>
-                |Remove Item From Cart
+                Remove Item From Cart
               </button>
             </li>
           );
