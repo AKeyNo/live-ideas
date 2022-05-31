@@ -34,9 +34,7 @@ export const ItemList = () => {
 
   return (
     <div className={'item-list'} data-cy='item-list'>
-      <h1>
-        <u>Items to Buy</u>
-      </h1>
+      <h1>Items to Buy</h1>
       <ul>
         {LISTOFITEMS.map((item) => {
           return (

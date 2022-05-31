@@ -16,7 +16,7 @@ export const ShoppingCart = () => {
             <li key={item.id}>
               {item.name}, {item.price}
               <br />
-              Quantity:
+              Quantity:&nbsp;
               {item.quantity}
               <button onClick={() => dispatch(removeFromShoppingCart(item))}>
                 Remove Item From Cart
